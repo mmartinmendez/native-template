@@ -11,6 +11,18 @@
             }
         }
     },
+    "crashlytics": {
+        "android": {
+            "gradle": {
+                "classpaths": [
+                    "com.google.firebase:firebase-crashlytics-gradle:2.2.0"
+                ],
+                "plugins": [
+                    "com.google.firebase.crashlytics"
+                ]
+            }
+        }
+    },
     "localNotifications": {
         "android": {
             "externalDependencies": [
@@ -36,7 +48,7 @@
             }
         }
     },
-    "pushNotifications": {
+    "firebaseAndroid": {
         "android": {
             "gradle": {
                 "classpaths": [
@@ -46,7 +58,9 @@
                     "com.google.gms.google-services"
                 ]
             }
-        },
+        }
+    },
+    "firebaseIos": {
         "ios": {
             "AppDelegate": {
                 "imports": [
