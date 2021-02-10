@@ -1,0 +1,2 @@
+include ':viro_renderer'
+project(':viro_renderer').projectDir = new File("../viro_renderer")

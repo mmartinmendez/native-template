@@ -2,5 +2,6 @@
     "deepLink": false,
     "pushNotifications": false,
     "maps": false,
-    "mapsIos": false
+    "mapsIos": false,
+    "viroAR": true
 }

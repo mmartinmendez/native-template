@@ -64,8 +64,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "react-native-camera", "general"
-        versionCode 1
-        versionName "1.0"
+        versionCode 12
+        versionName "1.0.3"
         testBuildType System.getProperty("testBuildType", "debug")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -111,8 +111,7 @@ android {
         viewBinding true
     }
     packagingOptions {
-        pickFirst '**/libjsc.so'
-        pickFirst '**/libc++_shared.so'
+        pickFirst '**/*.so'
     }
 }
 
@@ -125,7 +124,8 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:+"
+    implementation project(path: ':viro_bridge')  // From node_modules
 
     // Flipper debugger
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
@@ -152,6 +152,9 @@ dependencies {
     implementation project(":mendixnative-release")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.webkit:android-jsc:r245459"
+
+    // Viro 
+    implementation project(":viro_bridge")
 
     // Required for Custom Dev Apps
     devImplementation 'com.fasterxml.jackson.core:jackson-core:2.11.3'
